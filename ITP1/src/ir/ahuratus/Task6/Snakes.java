@@ -14,7 +14,7 @@
  *
  *  EhsanShaghaei.Ahuratus.ir
  *
- *	http://github.com/Ehsan2754
+ *	https://github.com/Ehsan2754/Java/tree/master/ITP1/src/ir/ahuratus/Task6
  *
  */
 package ir.ahuratus.Task6;
