@@ -78,8 +78,8 @@ public class Snakes {
             }
 
             try {
-                Thread.sleep(3);
-               // Thread.sleep(3000);
+              //  Thread.sleep(3);
+                Thread.sleep(3000);
             } catch (Exception e) {
                 System.out.println("ERR : "+e.toString());
 
