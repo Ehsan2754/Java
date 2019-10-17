@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ab2a220-30a0-4fe9-a941-dede09a99232" name="Default Changelist" comment="" />
+    <list default="true" id="7ab2a220-30a0-4fe9-a941-dede09a99232" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task6/Snakes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +21,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Qx8fLloH4Nc8Lg6K2vi9mkPawu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -30,6 +37,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ir.ahuratus.Task5" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.assert">
+  <component name="RunManager" selected="Application.Snakes">
     <configuration name="Innopolis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ir.ahuratus.task1.Innopolis" />
       <module name="ITP1" />
@@ -65,8 +77,9 @@
       </method>
     </configuration>
     <configuration name="Snakes" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ir.ahuratus.Task5.Snakes" />
+      <option name="MAIN_CLASS_NAME" value="ir.ahuratus.Task6.Snakes" />
       <module name="ITP1" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,10 +121,27 @@
       <workItem from="1569824650880" duration="2271000" />
       <workItem from="1569912469749" duration="16802000" />
       <workItem from="1570222727570" duration="3527000" />
+      <workItem from="1570434717201" duration="641000" />
+      <workItem from="1571132791262" duration="1316000" />
+      <workItem from="1571263980037" duration="1650000" />
+      <workItem from="1571295743213" duration="2517000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
