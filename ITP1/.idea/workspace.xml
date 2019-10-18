@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ab2a220-30a0-4fe9-a941-dede09a99232" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snakes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snakes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ir/ahuratus/Task6/Snakes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task6/Snakes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ir/ahuratus/Task6/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task6/log.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +127,7 @@
       <workItem from="1571132791262" duration="1316000" />
       <workItem from="1571263980037" duration="1650000" />
       <workItem from="1571295743213" duration="3409000" />
-      <workItem from="1571368176370" duration="4704000" />
+      <workItem from="1571368176370" duration="5048000" />
     </task>
     <servers />
   </component>
