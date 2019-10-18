@@ -34,7 +34,7 @@ public class Snakes {
     static Snake snake0 = new Snake(5, 5);
     static Snake snake1 = new Snake(2, 2);
 
-    static final String logFile = "E:\\FrontEnd_BackEnd\\Java\\ITP1\\src\\ir\\ahuratus\\Task6";
+    static final String logFile = "E:\\FrontEnd_BackEnd\\Java\\ITP1\\src\\ir\\ahuratus\\Task6\\log.txt";
 
 
     public static void main(String[] args) {
@@ -47,6 +47,7 @@ public class Snakes {
                 snake1.alive = false;
                 showMaze();
                 System.out.println("0-1");
+                appendMazeToFile(logFile,"0-1");
                 return;
             }
            
@@ -55,6 +56,7 @@ public class Snakes {
 							snake1.getHead().column == snake0.positions.get(i).column) {
                     showMaze();
                     System.out.println("0-0");
+                    appendMazeToFile(logFile,"0-0");
                     return;
                 }
             }
@@ -64,6 +66,7 @@ public class Snakes {
                 snake0.alive = false;
                 showMaze();
                 System.out.println("1-0");
+                appendMazeToFile(logFile,"1-0");
                 return;
             }
             
@@ -73,15 +76,17 @@ public class Snakes {
                     showMaze();
 
                     System.out.println("0-0");
+                    appendMazeToFile(logFile,"0-0");
                     return;
                 }
             }
 
             try {
-              //  Thread.sleep(3);
-                Thread.sleep(3000);
+               Thread.sleep(3);
+                //Thread.sleep(3000);
             } catch (Exception e) {
                 System.out.println("ERR : "+e.toString());
+                appendMazeToFile(logFile,"ERR\n");
 
             }
         }
@@ -91,6 +96,7 @@ public class Snakes {
 
     private static boolean motionCheck(Snake snake) {
         boolean FLG = false;
+
 
         String blocked_position = "";
         for(int i = 0; i < snake.positions.size() - 1; i++) {
@@ -109,7 +115,15 @@ public class Snakes {
         boolean evaluatedMove = evaluate(directions[0], snake);
         if(evaluatedMove && !blocked_position.equals(directions[0])) {
             FLG = true;
+            if (snake.move == 3 ){
+                snake.move = 0;
+                snake.addLength(directions[0]);
+            }
+            else{
             snake.nextMove(directions[0]);
+            snake.move++;
+            }
+
         }
 
         evaluatedMove = evaluate(directions[1], snake);
@@ -167,6 +181,7 @@ public class Snakes {
 
     private static void showMaze() {
         System.out.println();
+        appendMazeToFile(logFile,"\n");
         for(int r = 0; r < maze.length; ++r) {
             for(int c = 0; c < maze[r].length; ++c) {
                 char output = ' ';
@@ -184,66 +199,33 @@ public class Snakes {
                 if(output != '0' && output != '1' && output != 'X' && output != 'Y') output = '.';
 
                 System.out.print(output);
+                appendMazeToFile(logFile,String.valueOf(output));
             }
             System.out.println();
+            appendMazeToFile(logFile,"\n");
         }
 
     }
 
 
 
-    private static void appendMazeToFile(String file) {
+    private static void appendMazeToFile(String filePath,String data) {
         try {
-            FileWriter fw = new FileWriter(file, true);
 
-            try {
-                BufferedWriter bw = new BufferedWriter(fw);
 
-                try {
-                    PrintWriter out = new PrintWriter(bw);
+            File file = new File(filePath);
+            if (!file.exists())
+                    file.createNewFile();
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            PrintWriter pr = new PrintWriter(br);
+            pr.print(data);
+            pr.close();
+            br.close();
+            fr.close();
 
-                    try {
-                        for(int r = 0; r < maze.length; ++r) {
-                            for(int c = 0; c < maze[r].length; ++c) {
-                                Files.write(Paths.get(logFile), ".".getBytes(), new OpenOption[]{StandardOpenOption.APPEND});
-                            }
-
-                            Files.write(Paths.get(logFile), "\n".getBytes(), new OpenOption[]{StandardOpenOption.APPEND});
-                        }
-                    } catch (Throwable tr) {
-                        try {
-                            out.close();
-                        } catch (Throwable tr1) {
-                            tr.addSuppressed(tr1);
-                        }
-
-                        throw tr;
-                    }
-
-                    out.close();
-                } catch (Throwable tr2) {
-                    try {
-                        bw.close();
-                    } catch (Throwable tr3) {
-                        tr2.addSuppressed(tr3);
-                    }
-
-                    throw tr2;
-                }
-
-                bw.close();
-            } catch (Throwable tr4) {
-                try {
-                    fw.close();
-                } catch (Throwable tr5) {
-                    tr4.addSuppressed(tr5);
-                }
-
-                throw tr4;
-            }
-
-            fw.close();
-        } catch (IOException tr5) {
+        } catch (Exception ex) {
+            System.out.println("File ERR!"+ex.toString());
         }
 
     }
@@ -251,9 +233,11 @@ public class Snakes {
 
 class Snake {
     boolean alive = true;
+    public int move ;
     ArrayList<Position> positions = new ArrayList<>();
 
     public Snake(int row, int column) {
+        this.move = 0;
         this.alive = true;
         positions.add(new Position(row, column));
         positions.add(new Position(row, column + 1));
@@ -284,6 +268,27 @@ class Snake {
         }
 
         this.positions.remove(this.positions.size() - 1);
+    }
+    public void addLength(String direction) {
+        switch (direction) {
+            case "W":
+                this.positions.add(0, new Position(this.getHead().row, --this.getHead().column));
+                break;
+
+            case "N":
+                this.positions.add(0, new Position(--this.getHead().row, this.getHead().column));
+                break;
+
+            case "S":
+                this.positions.add(0, new Position(++this.getHead().row, this.getHead().column));
+                break;
+
+            case "E":
+                this.positions.add(0, new Position(this.getHead().row, ++this.getHead().column));
+                break;
+        }
+
+
     }
 }
 
