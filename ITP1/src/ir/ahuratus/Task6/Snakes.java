@@ -19,26 +19,56 @@
  */
 package ir.ahuratus.Task6;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.ImageObserver;
 import java.io.*;
 import java.nio.*;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.text.AttributedCharacterIterator;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.awt.*;
+import javax.swing.*;
+import java.applet.*;
+import static ir.ahuratus.task4.CauseProblem.g;
 
 
 public class Snakes {
     static int[][] maze = new int[8][8];
     static Snake snake0 = new Snake(5, 5);
     static Snake snake1 = new Snake(2, 2);
+    public static final int pixelSize = 100;
 
     static final String logFile = "E:\\FrontEnd_BackEnd\\Java\\ITP1\\src\\ir\\ahuratus\\Task6\\log.txt";
 
 
     public static void main(String[] args) {
         // TODO Implement the stop criteria
+
+
+
+
+
+        try {
+            Gui gui = new Gui(8,8 , pixelSize);
+            gui.showPixel(4,4,Color.BLUE,null);
+
+        }
+        catch (Throwable tr) {
+            System.out.println("ERR : "+tr.toString());
+        }
+
+
+
+
+
+
+
+
         while(snake1.alive && snake0.alive) {
             showMaze();
 
@@ -300,4 +330,32 @@ class Position {
         this.row = row;
         this.column = column;
     }
+}
+class Gui extends JFrame{
+    //private Graphics g;
+    public static  int pixelSize = 25;
+
+    public Gui(int Row, int Colomn , int pixelSize){
+        setTitle("Snakes by Ehsan Shaghaei");
+        setBackground(Color.GREEN);
+        setSize(Colomn*pixelSize,Row*pixelSize);
+        setVisible(true);
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.pixelSize = pixelSize;
+    }
+    public void showPixel(int x,int y,Color color,Graphics g)throws Exception , IOException,Throwable{
+
+        assert 0<x && x<7 && y<7 && y>0 : "Invalid Pixel";
+        setTitle("Snakes by Ehsan Shaghaei");
+        setBackground(Color.GREEN);
+        setSize(8*pixelSize,8*pixelSize);
+        setVisible(true);
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.pixelSize = pixelSize;
+        g.setColor(color);
+        g.fillRect(x*pixelSize,y*pixelSize,pixelSize,pixelSize);
+    }
+
 }

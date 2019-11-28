@@ -2,6 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ab2a220-30a0-4fe9-a941-dede09a99232" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Bot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Bot_E_Shaghaei.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Snake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task10/Snakes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task9/Generics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task9/Task9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ir/ahuratus/task14/InnoFunctional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snakes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/Snakes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ITP1/ir/ahuratus/Task6/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ir/ahuratus/Task6/Snakes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ir/ahuratus/Task6/Snakes.java" afterDir="false" />
@@ -19,6 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,11 +47,14 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Qx8fLloH4Nc8Lg6K2vi9mkPawu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Innopolis.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ir/ahuratus/task14" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -43,6 +63,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ir.ahuratus.Task5" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\FrontEnd_BackEnd\Java\ITP1\src\ir\ahuratus\Task10" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -57,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Snakes">
+  <component name="RunManager" selected="Application.Week14">
     <configuration name="Innopolis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ir.ahuratus.task1.Innopolis" />
       <module name="ITP1" />
@@ -86,6 +109,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TASK10" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ir.ahuratus.Task10.Snakes" />
+      <module name="ITP1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task9" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ir.ahuratus.Task9.Task9" />
+      <module name="ITP1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Week14" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ir.ahuratus.task14.InnoFunctional" />
+      <module name="ITP1" />
+      <option name="PROGRAM_PARAMETERS" value="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ir/ahuratus/task14" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="assert" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ir.ahuratus.Task5.TestAssert" />
       <module name="ITP1" />
@@ -95,6 +141,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Week14" />
+      <item itemvalue="Application.Task9" />
+      <item itemvalue="Application.TASK10" />
       <item itemvalue="Application.Snakes" />
       <item itemvalue="Application.assert" />
       <item itemvalue="Application.Main" />
@@ -127,7 +176,13 @@
       <workItem from="1571132791262" duration="1316000" />
       <workItem from="1571263980037" duration="1650000" />
       <workItem from="1571295743213" duration="3409000" />
-      <workItem from="1571368176370" duration="5048000" />
+      <workItem from="1571368176370" duration="12322000" />
+      <workItem from="1571727751948" duration="2093000" />
+      <workItem from="1572685642337" duration="12481000" />
+      <workItem from="1572937425199" duration="16465000" />
+      <workItem from="1574146889597" duration="3834000" />
+      <workItem from="1574775844289" duration="728000" />
+      <workItem from="1574950319755" duration="2003000" />
     </task>
     <servers />
   </component>
@@ -146,5 +201,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ir/ahuratus/Task6/Snakes.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
