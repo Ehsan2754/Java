@@ -21,42 +21,11 @@ public class DSA4 {
             for (column = 0; column < thisLine.length(); column++) {
                 switch (thisLine.charAt(column)) {
                     case '{':
-//                        if ((!closing.isEmpty()) &&
-//                                (closing.peek() == '}')) {
-//                            closing.pop();
-//                            closingLine.pop();
-//                            closingColumn.pop();
-//                        } else {
-//                            opening.push(thisLine.charAt(column));
-//                            openingLine.push(line+1);
-//                            openingColumn.push(column+1);
-//                        }
-//
-//                        break;
                     case '[':
-//                        if ((!closing.isEmpty()) &&
-//                                (closing.peek() == ']')) {
-//                            closing.pop();
-//                            closingLine.pop();
-//                            closingColumn.pop();
-//                        } else {
-//                            opening.push(thisLine.charAt(column));
-//                            openingLine.push(line+1);
-//                            openingColumn.push(column+1);
-//                        }
-//
-//                        break;
                     case '(':
-//                        if ((!closing.isEmpty()) &&
-//                                (closing.peek() == ')')) {
-//                            closing.pop();
-//                            closingLine.pop();
-//                            closingColumn.pop();
-//                        } else {
                         opening.push(thisLine.charAt(column));
                         openingLine.push(line + 1);
                         openingColumn.push(thisLine.length());
-//                        }
                         break;
 
                     case '}':
@@ -77,16 +46,7 @@ public class DSA4 {
                             }
 
                         }
-//                        if ((!opening.isEmpty()) &&
-//                                (opening.peek() == '{')) {
-//                            opening.pop();
-//                            openingLine.pop();
-//                            openingColumn.pop();
-//                        } else {
-//                            closing.push(thisLine.charAt(column));
-//                            closingLine.push(line+1);
-//                            closingColumn.push(column+1);
-//                        }
+
                         break;
                     case ']':
                         if (opening.isEmpty()) {
@@ -125,16 +85,6 @@ public class DSA4 {
                             }
 
                         }
-//                        if ((!opening.isEmpty()) &&
-//                                (opening.peek() == '(')) {
-//                            opening.pop();
-//                            openingLine.pop();
-//                            openingColumn.pop();
-//                        } else {
-//                            closing.push(thisLine.charAt(column));
-//                            closingLine.push(line+1);
-//                            closingColumn.push(column+1);
-//                        }
                         break;
                 }
             }
@@ -144,24 +94,6 @@ public class DSA4 {
                     + ", column " + openingColumn.pop()
                     + ": expected '" + mirrorIt(opening.pop())
                     + "', but got end of input.");
-
-//        while (
-//                (! (opening.isEmpty()||closing.isEmpty() )) &&
-//                (
-//                        (opening.peek() == '(' && closing.peek() == ')') ||
-//                        (opening.peek() == '{' && closing.peek() == '}') ||
-//                        (opening.peek() == '[' && closing.peek() == ']'
-//                        )
-//                )
-//        ) {
-//			opening.pop();
-//			openingLine.pop();
-//			openingColumn.pop();
-//			closing.pop();
-//			closingLine.pop();
-//			closingColumn.pop();
-//        }
-
 
     }
 
