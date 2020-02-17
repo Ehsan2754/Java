@@ -8,12 +8,11 @@ public class DSA4 {
     public static void main(String[] arg) throws Throwable {
         Scanner user = new Scanner(System.in);
         Stack<Character>
-                opening = new Stack<>(),
+                opening = new Stack<>();
 
         Stack<Integer>
                 openingLine = new Stack<>(),
-                openingColumn = new Stack<>(),
-
+                openingColumn = new Stack<>();
         int line, column;
         int MAX_LINE = user.nextInt();
         user.nextLine();
