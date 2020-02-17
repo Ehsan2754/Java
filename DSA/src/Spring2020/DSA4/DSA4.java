@@ -1,7 +1,5 @@
 package Spring2020.DSA4;
 
-import javax.sound.sampled.Line;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DSA4 {
@@ -29,51 +27,14 @@ public class DSA4 {
                         break;
 
                     case '}':
-                        if (opening.isEmpty()) {
-                            System.out.println("Error in line " + (line + 1)
-                                    + ", column " + (column + 1)
-                                    + ": unexpected closing '}'.");
-                        } else if (!opening.isEmpty()) {
-                            if (opening.peek() == '{') {
-                                opening.pop();
-                                openingLine.pop();
-                                openingColumn.pop();
-                            } else {
-                                System.out.println("Error in line " + (line + 1) +
-                                        ", column " + (column + 1)
-                                        + ": expected '" + opening.peek()
-                                        + "', but got '}'.");
-                            }
-
-                        }
-
-                        break;
                     case ']':
-                        if (opening.isEmpty()) {
-                            System.out.println("Error in line " + (line + 1)
-                                    + ", column " + (column + 1)
-                                    + ": unexpected closing ']'.");
-                        } else if (!opening.isEmpty()) {
-                            if (opening.peek() == '[') {
-                                opening.pop();
-                                openingLine.pop();
-                                openingColumn.pop();
-                            } else {
-                                System.out.println("Error in line " + (line + 1) +
-                                        ", column " + (column + 1)
-                                        + ": expected '" + opening.peek()
-                                        + "', but got ']'.");
-                            }
-
-                        }
-                        break;
                     case ')':
                         if (opening.isEmpty()) {
                             System.out.println("Error in line " + (line + 1)
                                     + ", column " + (column + 1)
-                                    + ": unexpected closing ')'.");
+                                    + ": unexpected closing '" + thisLine.charAt(column) + "'.");
                         } else if (!opening.isEmpty()) {
-                            if (opening.peek() == '(') {
+                            if (opening.peek() == mirrorIt(thisLine.charAt(column))) {
                                 opening.pop();
                                 openingLine.pop();
                                 openingColumn.pop();
@@ -81,7 +42,7 @@ public class DSA4 {
                                 System.out.println("Error in line " + (line + 1) +
                                         ", column " + (column + 1)
                                         + ": expected '" + opening.peek()
-                                        + "', but got ')'.");
+                                        + "', but got '" + thisLine.charAt(column) + "'.");
                             }
 
                         }
@@ -89,6 +50,7 @@ public class DSA4 {
                 }
             }
         }
+        if (opening.isEmpty()) System.out.println("Input is properly balanced");
         while (!opening.isEmpty())
             System.out.println("Error in line " + openingLine.pop()
                     + ", column " + openingColumn.pop()
