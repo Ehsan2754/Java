@@ -9,15 +9,11 @@ public class DSA4 {
         Scanner user = new Scanner(System.in);
         Stack<Character>
                 opening = new Stack<>(),
-                closing = new Stack<>(),
-                temp = new Stack<>();
+
         Stack<Integer>
                 openingLine = new Stack<>(),
                 openingColumn = new Stack<>(),
-                closingLine = new Stack<>(),
-                closingColumn = new Stack<>(),
-                tempLine = new Stack<>(),
-                tempColumn = new Stack<>();
+
         int line, column;
         int MAX_LINE = user.nextInt();
         user.nextLine();
