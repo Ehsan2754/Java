@@ -2,7 +2,7 @@ package Spring2020.DSA4;
 
 import java.util.Scanner;
 
-public class DSA4 {
+public class DSA4Task1and2 {
     public static void main(String[] arg) throws Throwable {
         Scanner user = new Scanner(System.in);
         Stack<Character>
@@ -12,6 +12,7 @@ public class DSA4 {
                 openingLine = new Stack<>(),
                 openingColumn = new Stack<>();
         int line, column;
+        boolean anyProblem = false;
         int MAX_LINE = user.nextInt();
         user.nextLine();
         for (line = 0; line < MAX_LINE; line++) {
@@ -33,6 +34,7 @@ public class DSA4 {
                             System.out.println("Error in line " + (line + 1)
                                     + ", column " + (column + 1)
                                     + ": unexpected closing '" + thisLine.charAt(column) + "'.");
+                            anyProblem = true;
                         } else if (!opening.isEmpty()) {
                             if (opening.peek() == mirrorIt(thisLine.charAt(column))) {
                                 opening.pop();
@@ -41,21 +43,26 @@ public class DSA4 {
                             } else {
                                 System.out.println("Error in line " + (line + 1) +
                                         ", column " + (column + 1)
-                                        + ": expected '" + opening.peek()
+                                        + ": expected '" + mirrorIt(opening.peek())
                                         + "', but got '" + thisLine.charAt(column) + "'.");
+                                anyProblem = true;
                             }
 
                         }
                         break;
                 }
+                if (anyProblem) break;
             }
+            if (anyProblem) break;
         }
-        if (opening.isEmpty()) System.out.println("Input is properly balanced");
-        while (!opening.isEmpty())
+        while ((!opening.isEmpty()) && (!anyProblem)) {
             System.out.println("Error in line " + openingLine.pop()
                     + ", column " + openingColumn.pop()
                     + ": expected '" + mirrorIt(opening.pop())
                     + "', but got end of input.");
+            anyProblem = true;
+        }
+        if (!anyProblem) System.out.println("Input is properly balanced.");
 
     }
 
