@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{DSA Assignment 1 Theoretical Part}
+\author{
+Ehsan Shaghaei
+\\
+\email{E.Shaghaei@innopolis.University}
+\\
+Group B19-03
+}
+\date{February 2020}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\section{Big-O Notation}
+\subsection{Definition}
+\underline{Big-O Notation:}\vspace{1mm}
+$f(n) = O(g(n))$ if for some $ c > 0 $ and $ n_0 \geq 1 $ we have $ f(n) \leq c \cdot g(n)$ for all values $ n \geq n_0 $.
+\subsection{Question 1}
+\begin{center}
+$$\frac{n^2}{3} - 3n = O(n^2)$$ 
+$$\frac{n^2}{3} - 3n \leq c \cdot n^2$$
+$\forall$ \hspace{2mm}  $n \geq n_0$
+$\exists$ \hspace{2mm} $c = 1$:
+$$\frac{n^2}{3} - 3n \leq n^2$$
+$$- 3n \leq \frac{2 \cdot n^2}{3}$$
+\end{center}
+So far, the inequality holds for any $n>0$.Since the right part of inequality is greater than zero while the left part is negative, let's choose $n_0 = 1$.Therefore, the equation $\frac{n^2}{3} - 3n = O(n^2)$ is correct.
+\subsection{Question 2}
+$$k_1 \cdot n^2 + k_2 \cdot n + k_3 = O(n^2)$$
+$$k_1 \cdot n^2 + k_2 \cdot n + k_3 \leq c \cdot n^2$$
+$\exists$ \hspace{2mm} $ c = k_1 + 1$ :
+$$k_1 \cdot n^2 + k_2 \cdot n + k_3 \leq (k1 + 1) \cdot n^2$$
+$$k_2 \cdot n + k_3 \leq n^2$$
+$$\frac{k_2}{n} + \frac{k_3}{n^2} \leq 1$$
+$\forall n_0 = 2 \cdot max(|k_2|, \sqrt{2 \cdot |k_3|}, 1)$,
+$$ \frac{k_2}{n} \leq 0.5$$
+$$ \frac{k_3}{n^2} \leq 0.5$$ 
+$\forall n \geq n0$.\\ 
+$$\Longrightarrow k_1 \cdot n^2 + k_2 \cdot n + k_3 = O(n^2)$$ 
+\subsection{Question 3}
+$$3^n = O(2^n)$$
+$$3^n \leq c \cdot 2^n$$
+$$e^{ln(3) \cdot n} \leq c \cdot e^{ln(2)\cdot n}$$
+$$e^{ln(1.5)\cdot n} \leq c$$
+$$ln(1.5) > 0$$
+$\Longrightarrow \vspace{1mm} \exists! c>0$ that :
+$$e^{ln(1.5)\cdot n} > c$$
+Hence $3^n = O(2^n)$ is false.
+\subsection{Question 4}
+$$\frac{ n \cdot ln(n)}{1000} - 2000 \cdot n + 6 = O(n \cdot ln(n))$$
+$$\frac{ n \cdot ln(n)}{1000} - 2000 \cdot n + 6 \leq c \cdot n \cdot ln(n)$$
+$\exists c = 2.001$
+$$\frac{ n \cdot ln(n)}{1000} - 2000 \cdot n + 6 \leq 2.001 \cdot n \cdot ln(n)$$
+$$6 \leq n \cdot (2000 + 2ln(n))$$
+$ \forall n \geq n_0 \hspace{1mm}, n_0 = 1$
+$$\Longrightarrow 6 \leq n \cdot (2000 + 2ln(n))$$
+Hence , 
+$$\frac{ n \cdot ln(n)}{1000} - 2000 \cdot n + 6 = O(n \cdot ln(n))$$
+
+\section{Hashing}
+
+\subsection{Separate Chaining}
+
+Add 17 to the 3th index of the element 0 since, $17 \hspace{1mm} mod \hspace{1mm} 7 = 3$
+ and add 19 to the 5th index of the element 0 since, $19 \hspace{1mm} mod \hspace{1mm} 7 = 5$ and add 26 to the 5th index of the element 1 because of the \underline{occurring collision}, $26 \hspace{1mm} mod \hspace{1mm} 7 = 5$ and add 13 to the 6th index of the element 0 since, $13 \hspace{1mm} mod \hspace{1mm} 7 = 6$ and add 48 to the 6th index of the element 1 because of  \underline{occurring collision}, $48 \hspace{1mm} mod \hspace{1mm} 7 = 6$.
+\vspace{10mm}
+\begin{center}
+\begin{tabular}{| c | c | c |} 
+ \hline
+ Index & Element 0 & Element 1\\ [1ex]
+ \hline
+ 0 & - & -\\ 
+
+ 1 & - & -\\
+
+ 2 & - & -\\
+
+ 3 & 17 & -\\
+
+ 4 & - & -\\
+
+ 5 & 19 & 26\\
+
+ 6 & 13 & 48 \\ 
+ \hline
+\end{tabular}
+\end{center}
+\vspace{10mm}
+
+\subsection{Linear Probing}
+
+In linear probing everything is same as separate chaining method except that for handling collision, we just store it in the next available free cell and since our only collision cases were for number 26 and 48 according to previous section; and since $26 \hspace{1mm} mod \hspace{1mm} 7 = 5$ and the $5$th cell is occupied, so we store it in the first next empty cell which is the 0 cell. Furthermore, $48 \hspace{1mm} mod \hspace{1mm} 7 = 6$, and the $6$th cell is occupied, so we go to the first next empty cell, which is $1$.
+
+\vspace{10mm}
+\begin{center}
+ \begin{tabular}{|c | c|} 
+ 
+ \hline
+ Index & Element 0 \\ [1ex]
+ \hline 
+ 0 & 26 \\ 
+
+ 1 & 48 \\
+
+ 2 & - \\
+
+ 3 & 17 \\
+
+ 4 & - \\
+
+ 5 & 19 \\
+
+ 6 & 13 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\vspace{10mm}
+
+\subsection{Double Hashing}
+In double hashing we apply two hashing functions to handle collision, hence:
+Add 17 to the 3th index of the element 0 since, $17 \hspace{1mm} mod \hspace{1mm} 7 = 3$
+ and add 19 to the 5th index of the element 0 since, $19 \hspace{1mm} mod \hspace{1mm} 7 = 5$ and add 26 to the 2nd index of the element 0 because of the \emph{occurring collision and applying the second hashing function}, $26 \hspace{1mm} mod \hspace{1mm} 7 = 5$ (Collision) so $(5 + h'(26)) \hspace{1mm} mod \hspace{1mm} 7 = (5 + 5 - (26 \hspace{1mm} mod \hspace{1mm} 5)) \hspace{1mm} mod \hspace{1mm} 7 = 2$ and add 13 to the 6th index of the element 0 since, $13 \hspace{1mm} mod \hspace{1mm} 7 = 5$ and add 48 to the 1st index of the element because of \emph{occurring collision and applying the second hashing function}, $48 \hspace{1mm} mod \hspace{1mm} 7 = 6$ (collision) so: $(6 + h'(48)) \hspace{1mm} mod \hspace{1mm} 7 = (6 + 5 - (48 \hspace{1mm} mod \hspace{1mm} 5)) \hspace{1mm} mod \hspace{1mm} 7 = 1$.
+\vspace{10mm}
+\begin{center}
+ \begin{tabular}{| c | c |} 
+ \hline
+ Index & Element 0 \\ [1ex] 
+ \hline
+ 0 & - \\ 
+ 
+ 1 & 48 \\
+ 
+ 2 & 26 \\
+ 
+ 3 & 17 \\
+ 
+ 4 & - \\
+ 
+ 5 & 19 \\
+ 
+ 6 & 13 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\vspace{10mm}
+
+
+\end{document}
